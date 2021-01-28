@@ -4,6 +4,7 @@ body {
 
 #main {
     margin: 10px 20px;
+    width: 1000px;
 }
 
 h3 {
@@ -12,18 +13,18 @@ h3 {
 
 .column {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
 .letter {
-    margin-bottom: 15px;
+    margin-bottom: 22px;
 }
 
 .letter p {
-    font-size: 12px;
-    font-family: "Verdana";
+    font-size: 15px;
+    font-family: "Lucida Console", "Courier New";
     margin: 0 0 2px 0;
-    color: #666;
+    color: #000;
 }
 
 .letter.high-frequency .bar {
