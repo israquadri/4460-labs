@@ -1,0 +1,28 @@
+body {
+    font-family: "Courier New";
+}
+
+h3 {
+	font-family: "Copperplate";
+	font-size: 25px;
+}
+
+h4 {
+	font-family: "Copperplate";
+	font-size: 20px;
+}
+
+div {
+	max-width: 800px;
+}
+
+#grid-container {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 20px;
+}
+
+#main {
+    margin: 10px 20px;
+    min-width: 800px
+}
