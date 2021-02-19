@@ -1,0 +1,17 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+table {
+    width: 450px;
+    padding: 5px;
+}
+
+#main {
+    padding-left: 10px;
+}
+
+td {
+    padding: 2px;
+    text-align: center;
+}
