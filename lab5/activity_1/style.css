@@ -1,0 +1,31 @@
+.axis-label {
+    text-anchor: middle;
+    font-size: 12px;
+    font-weight: semibold;
+}
+
+.bar {
+    fill: black;
+}
+
+.tick text {
+    font-size: 15px;
+}
+
+.title {
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.xaxis text {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Open Sans";
+    margin: 0;
+}
+
+#main {
+    margin: 20px;
+}

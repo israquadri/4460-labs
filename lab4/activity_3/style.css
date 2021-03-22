@@ -1,0 +1,34 @@
+.line-plot {
+    fill: none;
+    stroke-width: 1.5px;
+}
+
+.company-label {
+    text-anchor: middle;
+    font-size: 20px;
+    font-weight: semibold;
+}
+
+.axis-label {
+    text-anchor: middle;
+    font-size: 14px;
+    font-weight: semibold;
+}
+
+.grid path,
+.grid line {
+    stroke: #fff;
+}
+
+.background {
+    fill: #eee;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+#main {
+    margin: 20px;
+}
