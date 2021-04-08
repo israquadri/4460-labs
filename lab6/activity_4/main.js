@@ -15,7 +15,7 @@ var scatterplot = d3.select('#scatterplot')
 var cValue = function(d) { 
     return d["cylinders"];
 }
-var color = d3.scaleOrdinal(d3.schemeCategory10);
+const color = d3.scaleOrdinal(["#9467BD", "#4CA12D", "#D73E2A", "#F17D30", "#2477B4"]);
 
 var xaxis = "cylinders";
 var yaxis = "power (hp)"
@@ -108,21 +108,19 @@ d3.csv('cars.csv', dataPreprocessor).then(function(dataset) {
         .attr("y", function(d) { return ybar(d.count); })
         .attr("width", xbar.bandwidth())
         .attr("height", function(d) { return height - ybar(d.count); })
-        .attr("fill", "black");
+        .attr("fill", function(d) {
+            return color(cValue(d));
+        })
+        .style("opacity", 0.7);
     
     barchart.selectAll("rect")
         .each(function(d,i) {
             d3.select(this).on('mousemove', function(d) { 
                 HighlightCircle(d.cylinders)
-                d3.select(this).attr("fill", function(d) {
-                    return color(cValue(d));
-                });
+                d3.select(this).style("opacity", 1.0);
             })
             .on('mouseleave', function() {
-                    d3.selectAll('.bar')
-                        .attr('fill', function() {
-                            return "black";
-                        })
+                    d3.selectAll('.bar').style("opacity", 0.7);
                                     
                     d3.selectAll('circle')
                         .attr('fill', function(d) {
@@ -364,21 +362,19 @@ function updateScatterplot(xaxis, yaxis) {
                 .attr("y", function(d) { return ybar(d.count); })
                 .attr("width", xbar.bandwidth())
                 .attr("height", function(d) { return height - ybar(d.count); })
-                .attr("fill", "black");
+                .attr("fill", function(d) {
+                    return color(cValue(d));
+                })
+                .style("opacity", 0.7);
 
             barchart.selectAll("rect")
                 .each(function() {
                     d3.select(this).on('mousemove', function(d) { 
                         HighlightCircle(d["cylinders"])
-                        d3.select(this).attr("fill", function(d) {
-                            return color(cValue(d));
-                        });
+                        d3.select(this).style("opacity", 1.0);
                     })
                     .on('mouseleave', function() {
-                            d3.selectAll('.bar')
-                                .attr('fill', function() {
-                                    return "black";
-                                })
+                            d3.selectAll('.bar').style("opacity", 0.7);
                                             
                             d3.selectAll('circle')
                                 .attr('fill', function(d) {
@@ -475,21 +471,19 @@ function defaultBar(dataset) {
         .attr("y", function(d) { return ybar(d.count); })
         .attr("width", xbar.bandwidth())
         .attr("height", function(d) { return height - ybar(d.count); })
-        .attr("fill", "black");
+        .attr("fill", function(d) {
+            return color(cValue(d));
+        })
+        .style("opacity", 0.7);
     
     barchart.selectAll("rect")
         .each(function(d,i) {
             d3.select(this).on('mousemove', function(d) { 
                 HighlightCircle(d.cylinders)
-                d3.select(this).attr("fill", function(d) {
-                    return color(cValue(d));
-                });
+                d3.select(this).style("opacity", 1.0);
             })
             .on('mouseleave', function() {
-                    d3.selectAll('.bar')
-                        .attr('fill', function() {
-                            return "black";
-                        })
+                    d3.selectAll('.bar').style("opacity", 0.7);
                                     
                     d3.selectAll('circle')
                         .attr('fill', function(d) {
