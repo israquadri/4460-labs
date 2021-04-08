@@ -1,0 +1,68 @@
+
+.company-label {
+    text-anchor: middle;
+    font-size: 20px;
+    font-weight: semibold;
+    opacity: 0.8;
+}
+
+.xlabel {
+    font-size: 14px;
+}
+
+.ylabel {
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+.background {
+    fill: #eee;
+}
+
+body {
+    font-family: "Open Sans";
+    margin: 0;
+}
+
+text.hoverlabel {
+    font-size: 10px;
+    opacity: 0;
+    cursor: default;
+    position: relative;
+}
+
+circle {
+    opacity: 0.7;
+}
+
+svg {
+    padding-right: 15px;
+}
+
+.xaxis line {
+    opacity: 0.1;
+}
+
+.tick line {
+    opacity: 0.1;
+}
+
+#flex-container {
+    display: flex;
+    margin-top: 30px;
+    max-width: 1000px;
+}
+
+#scatterplot {
+    flex: 1;
+    padding-right: 30px;
+    padding-left: 20px;
+}
+
+#barchart {
+    margin-right: 20px;
+}
+
+.selection {
+    opacity: 0.2;
+}
