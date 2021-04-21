@@ -47,6 +47,7 @@ d3.csv('colleges.csv', dataPreprocessor).then(function(dataset) {
 
     barChart();
     all = {key: "ALL", values: data};
+    console.log(data);
     donutChart(all);
     scatterPlot(all, xax, yax);
     parallelPlot(all.values) 
@@ -606,7 +607,7 @@ function parallelPlot(coll) {
         .attr("height", height+30)
         .attr("id", "parallelcontainer")
         .append("g")
-        .attr("width", width)
+        .attr("width", width+20)
         .attr("height", height-100)
         .attr("transform", "translate(" + margin.left + ", 20)");
     
@@ -616,7 +617,7 @@ function parallelPlot(coll) {
     for (i in dimensions) {
         var name = dimensions[i];
         y[name] = d3.scaleLinear()
-            .domain([0, 1])
+            .domain([0, 100])
             .range([height, 0]);
     }
 
