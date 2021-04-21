@@ -47,7 +47,7 @@ d3.csv('colleges.csv', dataPreprocessor).then(function(dataset) {
 
     barChart();
     all = {key: "ALL", values: data};
-    console.log(data);
+    //console.log(data);
     donutChart(all);
     scatterPlot(all, xax, yax);
     parallelPlot(all.values) 
@@ -378,10 +378,10 @@ function scatterPlot(colleges, xaxis, yaxis) {
 
     var scatterplot = d3.select("#scatter")
         .append("svg")
-        .attr("width", width+90)
+        .attr("width", width+70)
         .attr("height", height+margin.top+margin.bottom)
         .append("g")
-        .attr("transform", "translate(40, 10)")
+        .attr("transform", "translate(50, 10)")
 
     
     var x = d3.scaleLinear()
@@ -452,7 +452,7 @@ function scatterPlot(colleges, xaxis, yaxis) {
                             return 1; 
                         }
                         else { 
-                            return 0.1; 
+                            return 0.2; 
                         }
                     })
                     .attr("class", function (d) {
@@ -472,7 +472,7 @@ function scatterPlot(colleges, xaxis, yaxis) {
                             return 1; 
                         }
                         else { 
-                            return 0.1; 
+                            return 0.2; 
                         }
                     }
                 })
@@ -564,8 +564,8 @@ function highlightLines() {
                 .duration(200)
                 .style('opacity', 0.9);
             tooltip.html(d['Name'] + 
-                        '<br>' + 'Admission Rate: ' + d['Admission Rate'] +
-                        '<br>' + 'Average Cost: ' + d['Average Cost'])
+                        '<br>' + 'Admission Rate: ' + (d['Admission Rate']*100).toFixed(1) + "%" +
+                        '<br>' + 'Average Cost: $' + d['Average Cost'])
                 .style('left', d3.event.pageX + 'px')
                 .style('top', d3.event.pageY - 28 + 'px');
                 })
