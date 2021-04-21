@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 7</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="main" width="1000" height="1000" style="border: 1px solid lightblue">
+        <div class="child" id="bar"></div>
+        <div class="child" id="donutscatter">
+            <div id="donutcontainer">
+                <div id="donut"></div>
+                <div id="details">
+                    <div width="150" id="dropdown" style="display: block;">
+                        <div id="xselect">
+                            <b>x:</b>
+                            <select class="custom-select" id="xAxisSelector" onchange="xAxisChanged()">
+                                <option selected value="SAT Average">SAT Average</option>
+                                <option value="Undergrad Population">Undergrad Population</option>
+                                <option value="Retention Rate">Retention Rate</option>
+                                <option value="Completion Rate">Completion Rate</option>
+                                <option value="Admission Rate">Admission Rate</option>
+                                <option value="Average Cost">Average Cost</option>
+                                <option value="Average Age of Entry">Average Age of Entry</option>
+                            </select> 
+                        </div> 
+                        <div id="yselect">
+                            <b>y:</b>
+                            <select class="custom-select" id="yAxisSelector" onchange="yAxisChanged()">
+                                <option value="SAT Average">SAT Average</option>
+                                <option value="Undergrad Population">Undergrad Population</option>
+                                <option value="Retention Rate">Retention Rate</option>
+                                <option value="Completion Rate">Completion Rate</option>
+                                <option selected value="Admission Rate">Admission Rate</option>
+                                <option value="Average Cost">Average Cost</option>
+                                <option value="Average Age of Entry">Average Age of Entry</option>
+                            </select> 
+                        </div> 
+                    </div>
+                    <div id="legend"></div>
+                </div>
+            </div>
+            <div id="scatter"></div>
+        </div>
+        <div class="child" id="parallel"></div>
+    </div>
+</body>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="./main.js"></script>
+</html>
