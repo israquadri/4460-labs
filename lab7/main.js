@@ -193,14 +193,35 @@ function donutChart(d) {
         return d.key;
     })
 
+    //console.log(nestedByLocale);
     //console.log(regions);
     createLegend(regions);
+
+    var total = 0;
+
+    nestedByLocale.forEach(function(e) {
+        //console.log(e.key);
+        total += e.values.length;
+        //console.log(e.values.length);
+    })
+
+    //console.log(total);
+    var percentages = [];
+
+    nestedByLocale.forEach(function(e) {
+        var obj = {}
+        var p = (e.values.length/total)*100;
+        obj[e.key] = p.toFixed(1);
+        percentages.push(obj);
+    })
+
+    //console.log(percentages[0].value);
 
 
     var width = 300,
         height = 300,
         radius = 120
-        innerradius = 70;
+        innerradius = 75;
 
     const pietooltip = d3.select("#donut")
         .append("div")
@@ -287,7 +308,24 @@ function donutChart(d) {
             }
 
         })
+        
+    var arcGenerator = d3.arc()
+        .innerRadius(innerradius)
+        .outerRadius(radius);
 
+    svg.selectAll('blah')
+        .data(data_ready)
+        .enter()
+        .append('text')
+        .text(function(d, i){
+            if (percentages[i][d.data.key] > 5) { 
+                return percentages[i][d.data.key] + "%"
+            }
+        })
+        .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
+        .style("text-anchor", "middle")
+        .style("font-size", 9)
+        .style("fill", "white")
 }
 
 function HighlightCircle(locale){
@@ -398,7 +436,7 @@ function scatterPlot(colleges, xaxis, yaxis) {
     function brushed() {
 
         brush = true;
-        console.log(brush);
+        //console.log(brush);
 
         var s = d3.event.selection,
             x0 = s[0][0],
@@ -634,7 +672,7 @@ function parallelPlot(coll) {
 
 function createLegend(names) {
 
-    console.log(names);
+    //console.log(names);
 
     var container = d3.select("#legend").append("svg")
         .attr("width", 150)
